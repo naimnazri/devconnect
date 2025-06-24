@@ -29,7 +29,7 @@ export default function UploadCertModal({ onClose, onUpload }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded shadow w-full max-w-md">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded shadow w-full max-w-md">
         <h2 className="text-xl font-bold mb-4">📥 Upload Certificate</h2>
         <div
           {...getRootProps()}
@@ -40,7 +40,7 @@ export default function UploadCertModal({ onClose, onUpload }) {
         </div>
 
         {certInfo && (
-          <div className="mt-4 text-sm bg-gray-50 p-3 rounded border">
+          <div className="mt-4 text-sm bg-gray-50 dark:bg-gray-700 p-3 rounded border">
             <p>
               <strong>Subject:</strong> {certInfo.subject}
             </p>
