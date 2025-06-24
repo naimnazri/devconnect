@@ -32,7 +32,6 @@ npm run dev     # frontend
 npm run server  # json-server
 ```
 
-=======
 
 ## Configuration
 
