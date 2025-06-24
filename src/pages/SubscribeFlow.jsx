@@ -18,6 +18,11 @@ export default function SubscribeFlow() {
   const back = () => setStep(step - 1);
 
   const handleSubmit = async () => {
+    const newKey = "api_" + Math.random().toString(36).slice(2, 12);
+    const newClientId = "clientId_" + Math.random().toString(36).slice(2, 12);
+    const newClientSecret =
+      "clientSecret_" + Math.random().toString(36).slice(2, 12);
+
     try {
       const payload = {
         apiSlug: slug,
@@ -30,6 +35,11 @@ export default function SubscribeFlow() {
             role: "Owner",
           },
         ],
+        credentials: {
+          apiKey: newKey,
+          clientId: newClientId,
+          clientSecret: newClientSecret,
+        },
       };
 
       await axios.post("/subscriptions", payload);
