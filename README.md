@@ -32,6 +32,8 @@ npm run dev     # frontend
 npm run server  # json-server
 ```
 
+=======
+
 ## Configuration
 
 Create a `.env` file in the project root to override the backend URL:
