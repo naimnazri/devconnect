@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import axios from "../api/axios";
-import SwaggerUI from "swagger-ui-react";
+const SwaggerUI = lazy(() => import("swagger-ui-react"));
 import "swagger-ui-react/swagger-ui.css";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
@@ -40,7 +40,9 @@ export default function ApiDetail() {
         ))}
       </div>
       <h2 className="text-lg font-semibold mb-2">📖 API Documentation</h2>
-      <SwaggerUI url={api.swaggerUrl} />{" "}
+      <Suspense fallback={<Spinner />}>
+        <SwaggerUI url={api.swaggerUrl} />
+      </Suspense>{" "}
       <button
         onClick={() => navigate(`/subscribe/${slug}`)}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
