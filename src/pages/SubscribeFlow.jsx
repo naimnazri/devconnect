@@ -24,6 +24,12 @@ export default function SubscribeFlow() {
         appName: formData.appName,
         appDescription: formData.appDescription,
         userEmail: user?.email || "anonymous@example.com",
+        members: [
+          {
+            email: user?.email || "anonymous@example.com",
+            role: "Owner",
+          },
+        ],
       };
 
       await axios.post("/subscriptions", payload);

@@ -25,49 +25,5 @@
       "swaggerUrl": "https://petstore.swagger.io/v2/swagger.json"
     }
   ],
-  "subscriptions": [
-    {
-      "id": "1",
-      "apiSlug": "weather-api",
-      "appName": "My Weather App",
-      "appDescription": "Tracks temperature in KL",
-      "userEmail": "naim@example.com",
-      "credentials": {
-        "apiKey": "abc-123-weather",
-        "clientId": "dev-naim",
-        "clientSecret": "s3cr3t-v@lue"
-      }
-    },
-    {
-      "id": "f8f1",
-      "apiSlug": "weather-api",
-      "appName": "AAA",
-      "appDescription": "ddd",
-      "userEmail": "naim@hhh.com",
-      "credentials": {
-        "apiKey": "api_ejqh7mcnn9",
-        "certificate": {
-          "subject": "C=JP, ST=Tokyo, L=Chuo-ku, O=Frank4DD, OU=WebCert Support, CN=Frank4DD Web CA, E=support@frank4dd.com",
-          "issuer": "C=JP, ST=Tokyo, L=Chuo-ku, O=Frank4DD, OU=WebCert Support, CN=Frank4DD Web CA, E=support@frank4dd.com",
-          "validFrom": "2007-12-07T10:21:46.000Z",
-          "validTo": "2017-12-04T10:21:46.000Z",
-          "rawPem": "-----BEGIN CERTIFICATE-----\nMIIDvDCCAyWgAwIBAgIJAMbHBAm8IlugMA0GCSqGSIb3DQEBBQUAMIGbMQswCQYD\nVQQGEwJKUDEOMAwGA1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNV\nBAoTCEZyYW5rNEREMRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMT\nD0ZyYW5rNEREIFdlYiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRk\nZC5jb20wHhcNMDcxMjA3MTAyMTQ2WhcNMTcxMjA0MTAyMTQ2WjCBmzELMAkGA1UE\nBhMCSlAxDjAMBgNVBAgTBVRva3lvMRAwDgYDVQQHEwdDaHVvLWt1MREwDwYDVQQK\nEwhGcmFuazRERDEYMBYGA1UECxMPV2ViQ2VydCBTdXBwb3J0MRgwFgYDVQQDEw9G\ncmFuazRERCBXZWIgQ0ExIzAhBgkqhkiG9w0BCQEWFHN1cHBvcnRAZnJhbms0ZGQu\nY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7r7yPJdXmDL2/+L2iogxQ\nrLML+10EwAY9lJRCHGPqSJ8if7teqnXgFr6MAEiCwTcLvk4h1UxLrDXmxooegNg1\nzx/OODbcc++SfFCGmflwj/wjLpYRwPgux7/QIgrUqzsj2HtdRFd+WPVD4AOtY9gn\nxjNXFpVe1zmgAm/UFLdMewIDAQABo4IBBDCCAQAwHQYDVR0OBBYEFGLze+0G1LHV\nnH9I5e/FyRVh/dkRMIHQBgNVHSMEgcgwgcWAFGLze+0G1LHVnH9I5e/FyRVh/dkR\noYGhpIGeMIGbMQswCQYDVQQGEwJKUDEOMAwGA1UECBMFVG9reW8xEDAOBgNVBAcT\nB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNEREMRgwFgYDVQQLEw9XZWJDZXJ0IFN1\ncHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdlYiBDQTEjMCEGCSqGSIb3DQEJARYU\nc3VwcG9ydEBmcmFuazRkZC5jb22CCQDGxwQJvCJboDAMBgNVHRMEBTADAQH/MA0G\nCSqGSIb3DQEBBQUAA4GBALosLpHduFOY30wKS2WQ32RzRgh0ZWNlLXWHkQYmzTHN\nokwYLy0wGfIqzD1ovLMjDuPMC3MBmQPg8zhd+BY2sgRhgdEBmYWTiw71eZLLmI/e\ndQbu1z6rOXJb8EegubJNkYTcuxsKLijIfJDnK2noqPt03puJEsBxosN14XPEhIEO\n-----END CERTIFICATE-----\n"
-        }
-      },
-      "members": [
-        {
-          "email": "naim@example.com",
-          "role": "Owner"
-        },
-        {
-          "email": "team@dev.com",
-          "role": "Member"
-        },
-        {
-          "email": "gaga@ddd.com",
-          "role": "Member"
-        }
-      ]
-    }
-  ]
+  "subscriptions": []
 }

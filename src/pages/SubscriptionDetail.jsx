@@ -57,6 +57,9 @@ export default function SubscriptionDetail() {
 
   const generateNewApiKey = async () => {
     const newKey = "api_" + Math.random().toString(36).slice(2, 12);
+    const newClientId = "clientId_" + Math.random().toString(36).slice(2, 12);
+    const newClientSecret =
+      "clientSecret_" + Math.random().toString(36).slice(2, 12);
 
     try {
       const updated = {
@@ -64,6 +67,8 @@ export default function SubscriptionDetail() {
         credentials: {
           ...subscription.credentials,
           apiKey: newKey,
+          clientId: newClientId,
+          clientSecret: newClientSecret,
         },
       };
 
@@ -109,25 +114,27 @@ export default function SubscriptionDetail() {
           />
         </div>
       </div>
-      <button
-        onClick={generateNewApiKey}
-        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Generate New API Key
-      </button>
-      <button
-        onClick={() => setShowModal(true)}
-        className="mt-4 px-4 py-2 bg-green-600 text-white rounded"
-      >
-        Upload Certificate
-      </button>
+      <div className="flex gap-2">
+        <button
+          onClick={generateNewApiKey}
+          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Generate New API Key
+        </button>
+        <button
+          onClick={() => setShowModal(true)}
+          className="mt-4 px-4 py-2 bg-green-600 text-white rounded"
+        >
+          Upload Certificate
+        </button>
 
-      <button
-        onClick={() => setShowInvite(true)}
-        className="mt-4 text-sm text-blue-600 underline"
-      >
-        Invite Member
-      </button>
+        <button
+          onClick={() => setShowInvite(true)}
+          className="mt-4 px-4 py-2 bg-yellow-600 text-white rounded"
+        >
+          Invite Member
+        </button>
+      </div>
 
       {showInvite && (
         <InviteMemberModal
