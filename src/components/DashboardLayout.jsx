@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // requires lucide-react
+import { Menu, X } from "lucide-react";
 
 export default function DashboardLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
