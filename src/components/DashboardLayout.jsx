@@ -8,7 +8,7 @@ export default function DashboardLayout({ children }) {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Mobile header with toggle */}
-      <div className="flex items-center justify-between px-4 py-3 bg-white shadow md:hidden">
+      <div className="flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-800 shadow md:hidden">
         <Link to="/" className="text-lg font-bold text-blue-600">
           DevConnect
         </Link>
@@ -25,7 +25,7 @@ export default function DashboardLayout({ children }) {
       <aside
         className={`${
           sidebarOpen ? "block" : "hidden"
-        } md:block w-full md:w-64 bg-white shadow md:h-auto h-screen z-50 absolute md:relative`}
+        } md:block w-full md:w-64 bg-white dark:bg-gray-800 shadow md:h-auto h-screen z-50 absolute md:relative`}
       >
         <div className="p-6 font-bold text-blue-600 border-b text-lg md:block hidden">
           DevConnect
@@ -41,7 +41,7 @@ export default function DashboardLayout({ children }) {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 bg-gray-50 p-6">{children}</main>
+      <main className="flex-1 bg-gray-50 dark:bg-gray-900 p-6">{children}</main>
     </div>
   );
 }
