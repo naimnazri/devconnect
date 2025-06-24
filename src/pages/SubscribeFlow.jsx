@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import axios from "../api/axios"; // add this at top
+import axios from "../api/axios";
 import { useSelector } from "react-redux"; // get user info
 import { toast } from "react-hot-toast";
 
