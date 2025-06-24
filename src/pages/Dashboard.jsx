@@ -3,10 +3,12 @@ import { useSelector } from "react-redux";
 import axios from "../api/axios";
 import { Link } from "react-router-dom";
 import DashboardLayout from "../components/DashboardLayout";
+import ConfirmDialog from "../components/ConfirmDialog";
 
 export default function Dashboard() {
   const user = useSelector((state) => state.auth.user);
   const [subscriptions, setSubscriptions] = useState([]);
+  const [deleteId, setDeleteId] = useState(null);
 
   useEffect(() => {
     if (!user?.email) return;
@@ -17,21 +19,24 @@ export default function Dashboard() {
       .catch((err) => console.error("Failed to fetch subscriptions:", err));
   }, [user?.email]);
 
-  const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to remove this subscription?")) return;
+  const handleDelete = async () => {
+    if (deleteId === null) return;
     try {
-      await axios.delete(`/subscriptions/${id}`);
-      setSubscriptions((prev) => prev.filter((s) => s.id !== id));
+      await axios.delete(`/subscriptions/${deleteId}`);
+      setSubscriptions((prev) => prev.filter((s) => s.id !== deleteId));
     } catch (err) {
       console.error("Failed to delete:", err);
       alert("Failed to remove subscription.");
+    } finally {
+      setDeleteId(null);
     }
   };
 
   return (
-    <DashboardLayout>
-      <h1 className="text-2xl font-bold mb-6">👋 Welcome, {user?.name}</h1>
-      <h2 className="text-lg font-semibold mb-4">📄 Your Subscriptions</h2>
+    <>
+      <DashboardLayout>
+        <h1 className="text-2xl font-bold mb-6">👋 Welcome, {user?.name}</h1>
+        <h2 className="text-lg font-semibold mb-4">📄 Your Subscriptions</h2>
 
       {subscriptions.length === 0 ? (
         <p>You haven’t subscribed to any APIs yet.</p>
@@ -61,7 +66,7 @@ export default function Dashboard() {
                 </Link>
 
                 <button
-                  onClick={() => handleDelete(sub.id)}
+                  onClick={() => setDeleteId(sub.id)}
                   className="text-red-600 text-sm underline"
                 >
                   Remove
@@ -71,6 +76,16 @@ export default function Dashboard() {
           ))}
         </div>
       )}
-    </DashboardLayout>
+      </DashboardLayout>
+      {deleteId !== null && (
+        <ConfirmDialog
+          title="Remove Subscription"
+          message="Are you sure you want to remove this subscription?"
+          confirmText="Remove"
+          onConfirm={handleDelete}
+          onCancel={() => setDeleteId(null)}
+        />
+      )}
+    </>
   );
 }
