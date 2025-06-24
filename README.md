@@ -30,3 +30,13 @@ DevConnect is a full-featured frontend app inspired by real-world API marketplac
 npm install
 npm run dev     # frontend
 npm run server  # json-server
+```
+
+## Configuration
+
+Create a `.env` file in the project root to override the backend URL:
+
+```bash
+# defaults to http://localhost:3001 if not set
+VITE_API_URL=http://your-api-server:3001
+```
