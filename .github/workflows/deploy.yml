@@ -32,10 +32,10 @@ jobs:
             }
 
             echo "🐳 Stopping and removing old containers..."
-            docker compose down || true
+            docker-compose down || true
 
             echo "🔧 Building and starting containers..."
-            docker compose up -d --build || {
+            docker-compose up -d --build || {
               echo "❌ Docker Compose up failed"; exit 1;
             }
 
